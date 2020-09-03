@@ -1,8 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: hostname-deployment-ns
-  namespace: production
+  name: hostname-deployment
 spec:
   replicas: 3
   selector:
@@ -24,12 +23,11 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: hostname-svc-clusterip-ns
-  namespace: production
+  name: hostname-service
 spec:
   ports:
   - name: web-port
-    port: 8080
+    port: 80
     targetPort: 80
   selector:
     app: webserver

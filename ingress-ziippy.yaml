@@ -1,0 +1,13 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: ingress-ziippy
+spec:
+  rules:
+  - host: k.ziippydomain.com
+    http:
+      paths:
+      - path: /echo-hostname
+        backend:
+          serviceName: hostname-service
+          servicePort: 80
