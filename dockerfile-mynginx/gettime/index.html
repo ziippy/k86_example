@@ -1,0 +1,20 @@
+<html>
+	<title>Get Time</title>
+	<head>
+	<script language="javascript">
+		function getTime() {
+				var currentdate = new Date();
+				var datetime = "Server Time: " + currentdate.getFullYear() + "-" + (currentdate.getMonth() + 1).toString()
+					+ "-" + currentdate.getDate() + " "
+					+ currentdate.getHours() + ":" 
+					+ currentdate.getMinutes() + ":" + currentdate.getSeconds();
+				console.log(datetime);
+				document.getElementById("timeValue").innerText = datetime;
+		}
+	</script>
+	</head>
+	<body onload="getTime()">
+		<span id="timeValue"></span>
+	</body>
+</html>
+
